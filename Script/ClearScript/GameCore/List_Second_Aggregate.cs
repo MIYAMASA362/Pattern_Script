@@ -33,6 +33,8 @@ public class List_Second_Aggregate : MonoBehaviour {
             if (AGREEMENT_BOOL == false)
             {
                 Debug.Log("不発");
+            
+                
             }
 
             List_First_Aggregate.PATTERN_FINAL_LIST.Clear();
