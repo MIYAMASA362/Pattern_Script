@@ -18,23 +18,30 @@ public class List_Second_Aggregate : MonoBehaviour {
             {
                 if (List_First_Aggregate.PATTERN_FINAL_LIST.SequenceEqual(Pattern_List.SKILL_LIST[i]))
                 {
-                    //スキルテキストの表示
-                    Debug.Log("型:"+Pattern_List.SKILL_TEXT[i][0]+ ", 魔力:" + Pattern_List.SKILL_INFO[i][0]+ ", 攻撃力:" + Pattern_List.SKILL_INFO[i][1]);
+                    if (Player_Status.Player_MP >= Pattern_List.SKILL_INFO[i][0])
+                    {
+                        //スキルテキストの表示
+                        Debug.Log("型:" + Pattern_List.SKILL_TEXT[i][0] + ", 魔力:" + Pattern_List.SKILL_INFO[i][0] + ", 攻撃力:" + Pattern_List.SKILL_INFO[i][1]);
 
-                    Player_Status.SKILL_MOVE = true;
+                        Player_Status.SKILL_MOVE = true;
 
-                    Player_Status.MAGIC_POINT = Pattern_List.SKILL_INFO[i][0];
-                    Player_Status.ATTACK_POINT = Pattern_List.SKILL_INFO[i][1];
+                        //Player.Statusへの値
+                        Player_Status.MAGIC_POINT = Pattern_List.SKILL_INFO[i][0];
+                        Player_Status.ATTACK_POINT = Pattern_List.SKILL_INFO[i][1];
 
-                    AGREEMENT_BOOL = true;
+                        AGREEMENT_BOOL = true;
+                    }
+                    else
+                    {
+                        Debug.Log("魔力が不足");
+                    }
+
                 }
             }
 
             if (AGREEMENT_BOOL == false)
             {
                 Debug.Log("不発");
-            
-                
             }
 
             List_First_Aggregate.PATTERN_FINAL_LIST.Clear();

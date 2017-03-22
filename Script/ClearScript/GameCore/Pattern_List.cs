@@ -33,11 +33,13 @@ public class Pattern_List : MonoBehaviour {
         SKILL_LIST.Insert(2, new List<int>() {4});
         //SKILL_LIST.Insert(, new List<int>() { });
 
-        //スキル情報（スキル型,List< 魔力,攻撃力,効果 >）
-        SKILL_INFO.Insert(0, new List<int>() {5,5,0 });
-        SKILL_INFO.Insert(1, new List<int>() {15,20,0});
-        SKILL_INFO.Insert(2, new List<int>() {1,1,0});
+
+        //スキル情報（スキル型,List       < 魔力,攻撃力,効果 >）
+        SKILL_INFO.Insert(0, new List<int>() {5,    5,  0});
+        SKILL_INFO.Insert(1, new List<int>() {15,   20, 0});
+        SKILL_INFO.Insert(2, new List<int>() {1,    1,  0});
         //SKILL_INFO.Insert(,new List<int>(){});
+
 
         //スキルテキスト
         SKILL_TEXT.Insert(0, new List<string>() {"攻撃0型"});

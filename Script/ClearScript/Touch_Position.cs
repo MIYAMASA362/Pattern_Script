@@ -5,6 +5,7 @@ public class Touch_Position : MonoBehaviour {
 
     public Material Touch_Color;
     public Material Touched_Color;
+    public Material Touch_NOT_Color;
 
     //リストに入れる値　判定値
     public int POINT_NUMBER;
@@ -16,7 +17,6 @@ public class Touch_Position : MonoBehaviour {
 
         //初期化
         THIS_MOVED = false;
-	
 	}
 	
 	// Update is called once per frame
@@ -42,14 +42,19 @@ public class Touch_Position : MonoBehaviour {
         //リセットが有効されたら
         if (Core_Touching.RESET_TP == true)
         {
-            GetComponent<Renderer>().material = Touch_Color;
+            if (Player_Status.MP_NOTING == true)
+            {
+                THIS_MOVED = true;
 
-            THIS_MOVED = false;
+                GetComponent<Renderer>().material = Touch_NOT_Color;
+            }
+            else
+            {
+                GetComponent<Renderer>().material = Touch_Color;
+
+                THIS_MOVED = false;
+            }
         }
-
 //
-
-
-        //Debug.Log("THIS_MOVE"+this.name+":"+THIS_MOVED);
-	}
+    }
 }

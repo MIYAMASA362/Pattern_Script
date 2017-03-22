@@ -106,9 +106,6 @@ public class Core_Touching : MonoBehaviour {
             //リストを消去
             Touch_List.Clear();
 
-            //リセットを有効
-            //RESET_TP = true;
-
             MOVE_UP = true;
 
             //HIT_NUMBERを初期化
@@ -119,36 +116,5 @@ public class Core_Touching : MonoBehaviour {
         }
 
 // ===>Touch_Position動作2(RESET_TP = true)
-
-
-//任意動作・デバック動作
-
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //リストを消去
-            Touch_List.Clear();
-            Debug.Log("Spaceキー入力");
-        }*/
-
-        /*
-        //要素の確認
-        for(int i = 0; i < Touch_List.Count; i++)
-        {
-            Debug.Log(Touch_List[i]);
-        }
-
-        
-        //総要素数の確認
-        //Debug.Log(Touch_List.Count);
-
-        //リセットの確認
-        //Debug.Log("RE:"+RESET_TP);
-
-        //HIT_NUMBERの確認
-        //Debug.Log("HIT_N:"+HIT_NUMBER);
-
-        //HIT_OBJECT_NAMEの確認
-        //Debug.Log("HIT_ON:" + HIT_OBJECT_NAME);
-	    */
     }
 }

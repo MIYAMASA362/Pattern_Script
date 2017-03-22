@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class LineRender : MonoBehaviour {
 
-	void Start () {
-
-        
-    }
-
-
 	void Update () {
 
         LineRenderer lineY = this.GetComponent<LineRenderer>();

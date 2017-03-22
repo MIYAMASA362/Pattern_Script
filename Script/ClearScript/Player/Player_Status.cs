@@ -21,6 +21,12 @@ public class Player_Status : MonoBehaviour {
     //動作制限
     public static bool PLAYER_BOOL;
 
+    //時間
+    private float TIME;
+
+    //魔力が無い
+    public static bool MP_NOTING;
+
 	void Start () {
 
         Player_HP = PLAYER_HP;
@@ -28,10 +34,32 @@ public class Player_Status : MonoBehaviour {
 
         SKILL_MOVE = false;
 
+        TIME = 0;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        TIME = TIME + Time.deltaTime;
+
+        //MP回復
+        if (TIME >= 2.0f)
+        {
+            Player_MP = Player_MP + 1;
+
+            TIME = 0;
+        }
+
+        //MPが無くなった
+        if (Player_MP <= 0)
+        {
+            MP_NOTING = true;
+        }
+        else
+        {
+            MP_NOTING = false;
+        }
 
         //上限を超えないように
         if (Player_HP >= PLAYER_HP)
@@ -50,15 +78,9 @@ public class Player_Status : MonoBehaviour {
 
             Player_MP = Player_MP - MAGIC_POINT;
 
-            
-
             SKILL_MOVE = false;
         }
 
         Debug.Log("MP" + Player_MP);
-
-        //Debug.Log("S_I:"+SKILL_IN);
-
-        //Debug.Log("S_M:" +SKILL_MOVE);
     }
 }
