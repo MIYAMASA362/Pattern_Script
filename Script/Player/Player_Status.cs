@@ -14,9 +14,9 @@ public class Player_Status : MonoBehaviour {
     public static bool SKILL_MOVE;
     public static int SKILL_IN;
 
-    //スキルより割り出された攻撃力と魔力
-    public static int ATTACK_POINT;
-    public static int MAGIC_POINT;
+    //攻撃力と魔力
+    public static int PLAYER_ATTACK_POINT;
+    public static int PLAYER_MAGIC_POINT;
 
     //動作制限
     public static bool PLAYER_BOOL;
@@ -27,12 +27,17 @@ public class Player_Status : MonoBehaviour {
     //魔力が無い
     public static bool MP_NOTING;
 
+    //生死判定
+    public static bool PLAYER_LIVE;
+
 	void Start () {
 
         Player_HP = PLAYER_HP;
         Player_MP = PLAYER_MP;
 
         SKILL_MOVE = false;
+
+        PLAYER_LIVE = true;
 
         TIME = 0;
 
@@ -43,7 +48,7 @@ public class Player_Status : MonoBehaviour {
 
         TIME = TIME + Time.deltaTime;
 
-        //MP回復
+        //MP時間回復
         if (TIME >= 2.0f)
         {
             Player_MP = Player_MP + 1;
@@ -73,14 +78,23 @@ public class Player_Status : MonoBehaviour {
 
         if (SKILL_MOVE == true)
         {
-            Debug.Log("消費された魔力:" + MAGIC_POINT);
-            Debug.Log("敵に与えたダメージ:" + ATTACK_POINT);
 
-            Player_MP = Player_MP - MAGIC_POINT;
+            //Debug.Log("消費された魔力:" + PLAYER_MAGIC_POINT);
+            //Debug.Log("敵に与えたダメージ:" + PLAYER_ATTACK_POINT);
+
+            Player_MP = Player_MP - PLAYER_MAGIC_POINT;
+
+            Enemy_Status.ENEMY_BOOL = true;
 
             SKILL_MOVE = false;
         }
 
-        Debug.Log("MP" + Player_MP);
+        //生死判定
+        if (Player_HP <= 0)
+        {
+            PLAYER_LIVE = false;
+        }
+
+        //Debug.Log("MP" + Player_MP);
     }
 }

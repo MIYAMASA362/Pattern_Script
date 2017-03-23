@@ -8,8 +8,6 @@ public class List_First_Aggregate : MonoBehaviour {
     //パターンの種類を最終的にまとめたリスト
     public static List<int> PATTERN_FINAL_LIST = new List<int>();
 
-    private bool PFLIST_OVER;
-
     void Update() {
 
         for (int i = 0; i < PATTERN_FINAL_LIST.Count; i++)
@@ -27,15 +25,9 @@ public class List_First_Aggregate : MonoBehaviour {
         //リスト容量制限
         if (PATTERN_FINAL_LIST.Count >= 5)
         {
-            PFLIST_OVER = true;
-
-            Debug.Log("リストは満杯です");
+            //Debug.Log("リストは満杯です");
 
             PATTERN_FINAL_LIST.RemoveAt(5);
-        }
-        else
-        {
-            PFLIST_OVER = false;
         }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -63,7 +55,7 @@ public class List_First_Aggregate : MonoBehaviour {
 
             if (AGREEMENT_BOOL == false)
             {
-                Debug.Log("不合致");
+                //Debug.Log("不合致");
 
                 Core_Touching.RESET_TP = true;
             }

@@ -26,8 +26,8 @@ public class List_Second_Aggregate : MonoBehaviour {
                         Player_Status.SKILL_MOVE = true;
 
                         //Player.Statusへの値
-                        Player_Status.MAGIC_POINT = Pattern_List.SKILL_INFO[i][0];
-                        Player_Status.ATTACK_POINT = Pattern_List.SKILL_INFO[i][1];
+                        Player_Status.PLAYER_MAGIC_POINT = Pattern_List.SKILL_INFO[i][0];
+                        Player_Status.PLAYER_ATTACK_POINT = Pattern_List.SKILL_INFO[i][1];
 
                         AGREEMENT_BOOL = true;
                     }

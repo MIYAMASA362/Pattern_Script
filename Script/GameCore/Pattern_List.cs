@@ -24,6 +24,7 @@ public class Pattern_List : MonoBehaviour {
         FIRST_PATTERN_LIST.Insert(2, new List<int>() { 1,2,3,5,7,8,9 });    //7
         FIRST_PATTERN_LIST.Insert(3, new List<int>() { 7,4,1,2,3,6,9 });    //7
         FIRST_PATTERN_LIST.Insert(4, new List<int>() { 1,2,3});
+        FIRST_PATTERN_LIST.Insert(5, new List<int>() { 4,1,2,3,6,9,8,5});
         //FIRST_PATTERN_LIST.Insert(,new List<int>(){});
 
 
@@ -31,6 +32,7 @@ public class Pattern_List : MonoBehaviour {
         SKILL_LIST.Insert(0, new List<int>() {0,2,1});                      //3
         SKILL_LIST.Insert(1, new List<int>() {1,3,0,0,1 });                 //5
         SKILL_LIST.Insert(2, new List<int>() {4});
+        SKILL_LIST.Insert(3, new List<int>() {5});
         //SKILL_LIST.Insert(, new List<int>() { });
 
 
@@ -38,6 +40,7 @@ public class Pattern_List : MonoBehaviour {
         SKILL_INFO.Insert(0, new List<int>() {5,    5,  0});
         SKILL_INFO.Insert(1, new List<int>() {15,   20, 0});
         SKILL_INFO.Insert(2, new List<int>() {1,    1,  0});
+        SKILL_INFO.Insert(3, new List<int>() {10,   10, 0});
         //SKILL_INFO.Insert(,new List<int>(){});
 
 
@@ -45,6 +48,7 @@ public class Pattern_List : MonoBehaviour {
         SKILL_TEXT.Insert(0, new List<string>() {"攻撃0型"});
         SKILL_TEXT.Insert(1, new List<string>() {"攻撃1型"});
         SKILL_TEXT.Insert(2, new List<string>() {"攻撃2型"});
+        SKILL_TEXT.Insert(3, new List<string>() {"攻撃3型"});
         //SKILL_TEXT.Insert(,new List<string>(){});
     }
 }
