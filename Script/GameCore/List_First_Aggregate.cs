@@ -15,13 +15,6 @@ public class List_First_Aggregate : MonoBehaviour {
             Debug.Log("要素"+i+":"+PATTERN_FINAL_LIST[i]);
         }
 
-        //Debug.Log(PATTERN_FINAL_LIST.Count);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PATTERN_FINAL_LIST.Clear();
-        }
-
         //リスト容量制限
         if (PATTERN_FINAL_LIST.Count >= 5)
         {

@@ -67,6 +67,7 @@ public class Enemy_Status : MonoBehaviour {
 
             ENEMY_BOOL = false;
         }
+
         //生死判定
         if (Enemy_HP <= 0)
         {
