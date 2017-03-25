@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Player_Status : MonoBehaviour {
 
+    //Playerのレベル
+    public int PLAYER_LEVEL;
+    public static int Player_Level;
+
     //HPの初期値・上限値
     public int PLAYER_HP;
     public static int Player_HP;
@@ -32,10 +36,13 @@ public class Player_Status : MonoBehaviour {
 
 	void Start () {
 
+        Player_Level = PLAYER_LEVEL;
         Player_HP = PLAYER_HP;
         Player_MP = PLAYER_MP;
 
         SKILL_MOVE = false;
+
+        PLAYER_BOOL = false;
 
         PLAYER_LIVE = true;
 
@@ -46,27 +53,35 @@ public class Player_Status : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        TIME = TIME + Time.deltaTime;
+        
 
         //MP時間回復
-        if (TIME >= 2.0f)
+        if (Player_MP < PLAYER_MP)
         {
-            Player_MP = Player_MP + 1;
+            TIME = TIME + Time.deltaTime;
 
-            TIME = 0;
+            if (TIME >= 2.0f)
+            {
+                Player_MP = Player_MP + 1;
+
+                TIME = 0;
+            }
         }
+        
 
         //MPが無くなった
         if (Player_MP <= 0)
         {
             MP_NOTING = true;
+
+            Player_MP = 0;
         }
         else
         {
             MP_NOTING = false;
         }
 
-        //上限を超えないように
+        //限度を超えないように
         if (Player_HP >= PLAYER_HP)
         {
             Player_HP = PLAYER_HP;
@@ -76,12 +91,9 @@ public class Player_Status : MonoBehaviour {
             Player_MP = PLAYER_MP;
         }
 
+        //スキルを発動した
         if (SKILL_MOVE == true)
         {
-
-            //Debug.Log("消費された魔力:" + PLAYER_MAGIC_POINT);
-            //Debug.Log("敵に与えたダメージ:" + PLAYER_ATTACK_POINT);
-
             Player_MP = Player_MP - PLAYER_MAGIC_POINT;
 
             Enemy_Status.ENEMY_BOOL = true;
@@ -89,10 +101,19 @@ public class Player_Status : MonoBehaviour {
             SKILL_MOVE = false;
         }
 
+        if (PLAYER_BOOL == true)
+        {
+            Player_HP = Player_HP - Enemy_Status.ENEMY_ATTACK_POINT;
+
+            PLAYER_BOOL = false;
+        }
+
         //生死判定
         if (Player_HP <= 0)
         {
             PLAYER_LIVE = false;
+
+            Player_HP = 0;
         }
 
         //Debug.Log("MP" + Player_MP);

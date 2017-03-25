@@ -7,6 +7,9 @@ public class Pattern_List : MonoBehaviour {
     //パターン
     public static List<List<int>> FIRST_PATTERN_LIST = new List<List<int>>();
 
+    //パターンのテキスト
+    public static List<List<string>> FIRST_PATTERN_LIST_TEXT = new List<List<string>>();
+
     //スキル
     public static List<List<int>> SKILL_LIST = new List<List<int>>();
 
@@ -15,6 +18,9 @@ public class Pattern_List : MonoBehaviour {
 
     //スキルのテキスト
     public static List<List<string>> SKILL_TEXT = new List<List<string>>();
+
+    //効果テキスト
+    public static List<List<string>> SKILL_EFFECT_TEXT = new List<List<string>>();
 
     void Start () {
 
@@ -26,6 +32,11 @@ public class Pattern_List : MonoBehaviour {
         FIRST_PATTERN_LIST.Insert(4, new List<int>() { 1,2,3});
         FIRST_PATTERN_LIST.Insert(5, new List<int>() { 4,1,2,3,6,9,8,5});
         //FIRST_PATTERN_LIST.Insert(,new List<int>(){});
+
+
+        //パターンテキスト
+        FIRST_PATTERN_LIST_TEXT.Insert(0, new List<string>() {"緑"});
+        //FIRST_PATTERN_LIST_TEXT.Insert(, new List<string>() {});
 
 
         //スキル　(スキル型,パターン型組み合わせ)  最大要素数は5なので注意                                                           
@@ -50,5 +61,10 @@ public class Pattern_List : MonoBehaviour {
         SKILL_TEXT.Insert(2, new List<string>() {"攻撃2型"});
         SKILL_TEXT.Insert(3, new List<string>() {"攻撃3型"});
         //SKILL_TEXT.Insert(,new List<string>(){});
+
+
+        //効果テキスト
+        //SKILL_EFFECT_TEXT.Insert(, new List<string>() { });
     }
+
 }

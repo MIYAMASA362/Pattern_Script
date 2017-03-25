@@ -9,12 +9,8 @@ public class Pattern_Count : MonoBehaviour {
     public Material In_Color;
     public Material Not_Color;
 
-    public int Pattern_Rock;
+    public static int Pattern_Rock;
 
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
 
