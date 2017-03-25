@@ -25,272 +25,118 @@ public class Pattern_Count : MonoBehaviour {
         GameObject Case_4 = GameObject.Find("Case_4");
         GameObject Case_5 = GameObject.Find("Case_5");
 
-
-
-        switch (Pattern_Rock)
+        //Case_1
+        if (Pattern_Rock < 5)
         {
-            case 0:
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count == 0)
+            {
+                //Defult_Color
+                Case_1.GetComponent<Renderer>().material = Default_Color;
+            }
+            else if(List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 1)
+            {
+                //In_Color
+                Case_1.GetComponent<Renderer>().material = In_Color;
+            }
+        }
+        else if (Pattern_Rock >= 5)
+        {
+            //Not_Color
+            Case_1.GetComponent<Renderer>().material = Not_Color;
 
-                switch (List_First_Aggregate.PATTERN_FINAL_LIST.Count)
-                {
-                    case 0:
-
-                        Case_1.GetComponent<Renderer>().material = Default_Color;
-                        Case_2.GetComponent<Renderer>().material = Default_Color;
-                        Case_3.GetComponent<Renderer>().material = Default_Color;
-                        Case_4.GetComponent<Renderer>().material = Default_Color;
-                        Case_5.GetComponent<Renderer>().material = Default_Color;
-
-                        break;
-
-                    case 1:
-
-                        Case_1.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 2:
-
-                        Case_2.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 3:
-
-                        Case_3.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 4:
-
-                        Case_4.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 5:
-
-                        Case_5.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-                }
-
-                break;
-
-            case 1:
-
-                Case_5.GetComponent<Renderer>().material = Not_Color;
-                
-                switch (List_First_Aggregate.PATTERN_FINAL_LIST.Count)
-                {
-                    case 0:
-
-                        Case_1.GetComponent<Renderer>().material = Default_Color;
-                        Case_2.GetComponent<Renderer>().material = Default_Color;
-                        Case_3.GetComponent<Renderer>().material = Default_Color;
-                        Case_4.GetComponent<Renderer>().material = Default_Color;
-
-                        break;
-
-                    case 1:
-
-                        Case_1.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 2:
-
-                        Case_2.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 3:
-
-                        Case_3.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 4:
-
-                        Case_4.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 5:
-
-                        List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(5);
-
-                        break;
-                }
-                break;
-
-            case 2:
-
-                Case_5.GetComponent<Renderer>().material = Not_Color;
-                Case_4.GetComponent<Renderer>().material = Not_Color;
-
-                switch (List_First_Aggregate.PATTERN_FINAL_LIST.Count)
-                {
-                    case 0:
-
-                        Case_1.GetComponent<Renderer>().material = Default_Color;
-                        Case_2.GetComponent<Renderer>().material = Default_Color;
-                        Case_3.GetComponent<Renderer>().material = Default_Color;
-
-                        break;
-
-                    case 1:
-
-                        Case_1.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 2:
-
-                        Case_2.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 3:
-
-                        Case_3.GetComponent<Renderer>().material = In_Color;
-
-                        break;
-
-                    case 4:
-
-                        List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(4);
-
-                        break;
-
-                    case 5:
-
-                        List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(5);
-
-                        break;
-                }
-
-                break;
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 1)
+            {
+                //RemoveAt(1)
+                List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(0);
+            }
         }
 
-        switch (List_First_Aggregate.PATTERN_FINAL_LIST.Count)
+        //Case_2
+        if (Pattern_Rock < 4)
         {
-            case 0 :
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count == 0)
+            {
+                Case_2.GetComponent<Renderer>().material = Default_Color;
+            }
+            else if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 2)
+            {
+                Case_2.GetComponent<Renderer>().material = In_Color;
+            }
+        }
+        else if (Pattern_Rock >= 4)
+        {
+            Case_2.GetComponent<Renderer>().material = Not_Color;
 
-                    Case_1.GetComponent<Renderer>().material = Default_Color;
-                    Case_2.GetComponent<Renderer>().material = Default_Color;
-                    Case_3.GetComponent<Renderer>().material = Default_Color;
-                    Case_4.GetComponent<Renderer>().material = Default_Color;
-                    Case_5.GetComponent<Renderer>().material = Default_Color;
-
-                break;
-
-            case 1:
-
-                if (Pattern_Rock >= 5)
-                {
-                    List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(1);
-                }
-                else
-                {
-                    Case_1.GetComponent<Renderer>().material = In_Color;
-                }
-
-                break;
-
-            case 2:
-
-                if (Pattern_Rock >= 4)
-                {
-                    List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(2);
-                }
-                else
-                {
-                    Case_2.GetComponent<Renderer>().material = In_Color;
-                }
-
-                break;
-
-            case 3:
-
-                if (Pattern_Rock >= 3)
-                {
-                    List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(3);
-                }
-                else
-                {
-                    Case_3.GetComponent<Renderer>().material = In_Color;
-                }
-
-                break;
-
-            case 4:
-
-                if (Pattern_Rock >= 2)
-                {
-                    List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(4);
-                }
-                else
-                {
-                    Case_4.GetComponent<Renderer>().material = In_Color;
-                }
-
-                break;
-
-            case 5:
-
-                if (Pattern_Rock >= 1)
-                {
-                    List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(5);
-                }
-                else
-                {
-                    Case_5.GetComponent<Renderer>().material = In_Color;
-                }
-
-                break;
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 2)
+            {
+                List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(1);
+            }
         }
 
-        switch (Pattern_Rock)
+        //Case_3
+        if (Pattern_Rock < 3)
         {
-            case 1:
-
-                Case_5.GetComponent<Renderer>().material = Not_Color;
-
-                break;
-
-            case 2:
-
-                Case_4.GetComponent<Renderer>().material = Not_Color;
-                Case_5.GetComponent<Renderer>().material = Not_Color;
-
-                break;
-
-            case 3:
-
-                Case_3.GetComponent<Renderer>().material = Not_Color;
-                Case_4.GetComponent<Renderer>().material = Not_Color;
-                Case_5.GetComponent<Renderer>().material = Not_Color;
-
-                break;
-
-            case 4:
-
-                Case_2.GetComponent<Renderer>().material = Not_Color;
-                Case_3.GetComponent<Renderer>().material = Not_Color;
-                Case_4.GetComponent<Renderer>().material = Not_Color;
-                Case_5.GetComponent<Renderer>().material = Not_Color;
-
-                break;
-
-            case 5:
-
-                Case_1.GetComponent<Renderer>().material = Not_Color;
-                Case_2.GetComponent<Renderer>().material = Not_Color;
-                Case_3.GetComponent<Renderer>().material = Not_Color;
-                Case_4.GetComponent<Renderer>().material = Not_Color;
-                Case_5.GetComponent<Renderer>().material = Not_Color;
-
-                break;
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count == 0)
+            {
+                Case_3.GetComponent<Renderer>().material = Default_Color;
+            }
+            else if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 3)
+            {
+                Case_3.GetComponent<Renderer>().material = In_Color;
+            }
         }
-	}
+        else if (Pattern_Rock >= 3)
+        {
+            Case_3.GetComponent<Renderer>().material = Not_Color;
+
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 3)
+            {
+                List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(2);
+            }
+        }
+
+        //Case_4
+        if (Pattern_Rock < 2)
+        {
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count == 0)
+            {
+                Case_4.GetComponent<Renderer>().material = Default_Color;
+            }
+            else if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 4)
+            {
+                Case_4.GetComponent<Renderer>().material = In_Color;
+            }
+        }
+        else if (Pattern_Rock >= 2)
+        {
+            Case_4.GetComponent<Renderer>().material = Not_Color;
+
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 4)
+            {
+                List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(3);
+            }
+        }
+
+        //Case_5
+        if (Pattern_Rock < 1)
+        {
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count == 0)
+            {
+                Case_5.GetComponent<Renderer>().material = Default_Color;
+            }
+            else if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 5)
+            {
+                Case_5.GetComponent<Renderer>().material = In_Color;
+            }
+        }
+        else if (Pattern_Rock >= 1)
+        {
+            Case_5.GetComponent<Renderer>().material = Not_Color;
+
+            if (List_First_Aggregate.PATTERN_FINAL_LIST.Count >= 5)
+            {
+                List_First_Aggregate.PATTERN_FINAL_LIST.RemoveAt(4);
+            }
+        }
+    }
 }
